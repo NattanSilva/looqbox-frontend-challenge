@@ -5,7 +5,21 @@ export default function RootLayout() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route
+          path='/'
+          element={
+            <div
+              style={{
+                width: '100%',
+                minHeight: '100dvh',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <Home />
+            </div>
+          }
+        />
       </Routes>
     </BrowserRouter>
   )
