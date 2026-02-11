@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
+import { Navbar } from './components/Navbar'
 import { Home } from './pages/Home'
+import { Pokemons } from './pages/Pokemons'
 
 export default function RootLayout() {
   return (
@@ -8,15 +10,17 @@ export default function RootLayout() {
         <Route
           path='/'
           element={
-            <div
-              style={{
-                width: '100%',
-                minHeight: '100dvh',
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
+            <div className='w-full min-h-dvh flex flex-col'>
               <Home />
+            </div>
+          }
+        />
+        <Route
+          path='/pokemons'
+          element={
+            <div className='w-full min-h-dvh flex flex-col'>
+              <Navbar title='Pokémons' />
+              <Pokemons />
             </div>
           }
         />
