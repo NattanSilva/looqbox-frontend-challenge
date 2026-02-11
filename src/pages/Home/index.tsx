@@ -1,10 +1,18 @@
 import { Button } from 'antd'
+import { useEffect } from 'react'
 import ReactPlayer from 'react-player'
 import { useNavigate } from 'react-router'
 import VideoBanner from '../../assets/banner.mp4'
+import { useAppDispatch } from '../../store'
+import { loadAllPokemonNames } from '../../store/slices/pokemon'
 
 export function Home() {
   const navigate = useNavigate()
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(loadAllPokemonNames())
+  }, [])
 
   return (
     <div className='relative h-dvh w-full overflow-hidden'>

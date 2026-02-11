@@ -31,7 +31,7 @@ export function HamburgerMenu() {
               icon: <HomeOutlined />,
               onClick: () => navigate('/'),
             },
-            { key: 'pokemons', label: 'Pokémons', icon: <QqOutlined /> },
+            { key: 'pokemons', label: 'Pokemons', icon: <QqOutlined /> },
           ]}
           onClick={() => setOpen(false)}
         />
