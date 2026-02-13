@@ -22,14 +22,14 @@ export function PokemonsList() {
   }, [dispatch])
 
   useEffect(() => {
-    if (allPokemons.length === 0) {
+    if (allPokemons?.length === 0) {
       dispatch(loadAllPokemonNames())
     }
-  }, [dispatch, allPokemons.length])
+  }, [dispatch, allPokemons?.length])
 
   if (
-    (searchedData.length <= 0 && baseData.length <= 0) ||
-    (isSearching && searchedData.length <= 0)
+    (searchedData?.length <= 0 && baseData?.length <= 0) ||
+    (isSearching && searchedData?.length <= 0)
   ) {
     return (
       <div className='w-full flex flex-1 flex-col items-center justify-center gap-2'>
@@ -47,7 +47,7 @@ export function PokemonsList() {
 
   return (
     <ul className='w-full flex flex-col gap-4 md:gap-[1%] lg:gap-[2%] md:flex-wrap md:flex-row'>
-      {(searchedData.length > 0 ? searchedData : baseData).map((pokemon) => (
+      {(searchedData?.length > 0 ? searchedData : baseData).map((pokemon) => (
         <PokemonCard key={pokemon.name} url={pokemon.url} name={pokemon.name} />
       ))}
     </ul>
