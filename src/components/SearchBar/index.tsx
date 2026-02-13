@@ -22,11 +22,11 @@ export function SearchBar() {
   const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (
     errorInfo,
   ) => {
-    console.log('Failed:', errorInfo)
+    console.error('Failed:', errorInfo)
   }
 
   return (
-    <div className='w-full flex! justify-center! items-center!'>
+    <div className='w-full flex! flex-col justify-center! items-center! gap-2'>
       <Form
         name='basic'
         style={{ width: '100%' }}
@@ -57,6 +57,10 @@ export function SearchBar() {
           />
         </Form.Item>
       </Form>
+
+      <p className='text-gray-400 text-sm'>
+        Search a Pokémon by name or browse the paginated list.
+      </p>
     </div>
   )
 }

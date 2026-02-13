@@ -32,7 +32,7 @@ export function Home() {
 
       <div className='relative z-10 flex h-full items-center justify-center md:justify-start text-center md:text-left text-white '>
         <div className='flex flex-col items-center md:items-start gap-4 md:gap-8 px-[5%]'>
-          <p className='md:w-80 mt-4 text-5xl font-bold text-shadow-zinc-900'>
+          <p className='md:w-80 mt-4 text-5xl text-shadow-zinc-900 font-cursive'>
             Your journey starts here!
           </p>
           <Button

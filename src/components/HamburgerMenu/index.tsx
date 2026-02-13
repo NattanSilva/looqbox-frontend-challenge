@@ -1,4 +1,10 @@
-import { HomeOutlined, MenuOutlined, QqOutlined } from '@ant-design/icons'
+import {
+  GithubOutlined,
+  LinkOutlined,
+  MenuOutlined,
+  PoweroffOutlined,
+  QqOutlined,
+} from '@ant-design/icons'
 import { Button, Drawer, Menu } from 'antd'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
@@ -26,12 +32,40 @@ export function HamburgerMenu() {
           mode='vertical'
           items={[
             {
-              key: 'home',
-              label: 'Home',
-              icon: <HomeOutlined />,
-              onClick: () => navigate('/'),
+              key: 'pokemons',
+              label: 'Pokemons',
+              icon: <QqOutlined />,
+              onClick: () => {
+                navigate('/pokemons')
+              },
             },
-            { key: 'pokemons', label: 'Pokemons', icon: <QqOutlined /> },
+            {
+              key: 'repository',
+              label: 'Repository',
+              icon: <GithubOutlined />,
+              onClick: () => {
+                window.open(
+                  'https://github.com/NattanSilva/looqbox-frontend-challenge',
+                  '_blank',
+                )
+              },
+            },
+            {
+              key: 'api-docs',
+              label: 'API Docs',
+              icon: <LinkOutlined />,
+              onClick: () => {
+                window.open('https://pokeapi.co/docs/v2/', '_blank')
+              },
+            },
+            {
+              key: 'exit',
+              label: 'Exit',
+              icon: <PoweroffOutlined />,
+              onClick: () => {
+                navigate('/')
+              },
+            },
           ]}
           onClick={() => setOpen(false)}
         />

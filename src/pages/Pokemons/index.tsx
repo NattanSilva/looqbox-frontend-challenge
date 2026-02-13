@@ -1,9 +1,9 @@
-import { Pagination } from 'antd'
 import { useEffect } from 'react'
 import { PokemonsList } from '../../components/PokemonsList'
 import { SearchBar } from '../../components/SearchBar'
 import { useAppDispatch, useAppSelector } from '../../store'
 
+import { Pagination } from 'antd'
 import { useSearchParams } from 'react-router'
 import { loadPokemonPaginatedList } from '../../store/slices/pokemon'
 
@@ -30,8 +30,8 @@ export function Pokemons() {
   return (
     <main className='w-full min-h-dvh flex flex-col gap-4 px-[5%] pt-22 bg-blue-50'>
       <SearchBar />
-
-      <div className='w-full flex justify-center'>
+      <PokemonsList />
+      <div className='w-full flex justify-center mb-6'>
         <Pagination
           current={currentPage}
           total={total}
@@ -42,8 +42,6 @@ export function Pokemons() {
           disabled={isSearching}
         />
       </div>
-
-      <PokemonsList />
     </main>
   )
 }
