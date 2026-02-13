@@ -46,7 +46,7 @@ export function SearchBar() {
             type='primary'
             htmlType='reset'
             icon={<CloseOutlined />}
-            onClick={(e) => dispatch({ type: 'pokemons/resetSearch' })}
+            onClick={() => dispatch({ type: 'pokemons/resetSearch' })}
           />
         </Form.Item>
       </Form>

@@ -47,7 +47,7 @@ export function PokemonCard({ name, url, ...rest }: PokemonCardProps) {
       {...rest}
     >
       <Card
-        onClick={(e) => navigate(`/pokemons/${pokemonData?.id}/details`)}
+        onClick={() => navigate(`/pokemons/${pokemonData?.id}/details`)}
         className='w-full! border-4! border-blue-200! mb-4! rounded-tr-none! rounded-bl-none! rounded-2xl! transition-all duration-300! hover:border-blue-400! hover:ring-4 hover:ring-blue-500 hover:shadow-[0_0_15px_rgba(59,130,246,0.9),0_0_40px_rgba(59,130,246,0.8),0_0_60px_rgba(96,165,250,0.7)]'
       >
         <div className='w-full h-fit flex flex-col'>
@@ -69,7 +69,7 @@ export function PokemonCard({ name, url, ...rest }: PokemonCardProps) {
         </div>
         <Button
           type='primary'
-          onClick={(e) => navigate(`/pokemons/${pokemonData?.id}/details`)}
+          onClick={() => navigate(`/pokemons/${pokemonData?.id}/details`)}
           className='w-full mt-4 rounded-tr-none! rounded-bl-none!'
         >
           Details
