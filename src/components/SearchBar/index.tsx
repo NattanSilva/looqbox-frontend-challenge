@@ -19,12 +19,6 @@ export function SearchBar() {
     handleSearch(values.name)
   }
 
-  const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (
-    errorInfo,
-  ) => {
-    console.error('Failed:', errorInfo)
-  }
-
   return (
     <div className='w-full flex! flex-col justify-center! items-center! gap-2'>
       <Form
@@ -32,7 +26,6 @@ export function SearchBar() {
         style={{ width: '100%' }}
         initialValues={{ remember: true }}
         onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
         autoComplete='off'
         className='w-full! md:w-[80%]! lg:w-[60%]! flex! justify-between! items-center! gap-2'
       >

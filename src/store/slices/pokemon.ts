@@ -85,7 +85,6 @@ export const pokemonsSlice = createSlice({
       })
       .addCase(loadAllPokemonNames.rejected, (state, action) => {
         state.isLoading = false
-        console.error(action.error)
       })
       .addCase(loadPokemonPaginatedList.pending, (state) => {
         state.isLoading = true
@@ -96,7 +95,6 @@ export const pokemonsSlice = createSlice({
       })
       .addCase(loadPokemonPaginatedList.rejected, (state, action) => {
         state.isLoading = false
-        console.error(action.error)
       })
   },
 })

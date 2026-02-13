@@ -42,7 +42,7 @@ export function PokemonCard({ name, url, ...rest }: PokemonCardProps) {
 
   return (
     <li
-      className='w-full md:w-[49.5%] lg:w-[23.5%] cursor-pointer!'
+      className='w-full md:w-[49.5%] lg:w-[23.5%] cursor-pointer! animate-popup'
       key={name}
       {...rest}
     >

@@ -1,73 +1,186 @@
-# React + TypeScript + Vite
+## Looqbox Frontend Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> [Portuguese Version](./README_BR.md)
 
-Currently, two official plugins are available:
+Frontend application built as part of the **Looqbox technical challenge**, using a modern stack with **React**, **TypeScript**, **Vite**, **Redux Toolkit** and **Tailwind CSS**, plus visual components from **Ant Design**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The main goals of this project are to provide an experience that is:
 
-## React Compiler
+- **Fast** (Vite build, React 19)
+- **Scalable** (Redux Toolkit, organized architecture)
+- **Modern and intuitive** (consistent design, reusable components, good UX practices)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** (`react`, `react-dom`)
+- **TypeScript**
+- **Vite** (build tool and dev server)
+- **Redux Toolkit** (`@reduxjs/toolkit`, `react-redux`)
+- **React Router** (`react-router`) for navigation
+- **Ant Design** (`antd`) for UI components
+- **Tailwind CSS 4** (`tailwindcss`, `@tailwindcss/vite`, `tailwind-merge`) for utility‑first styling
+- **Axios** for HTTP requests
+- **React Player** (`react-player`) for media/video when needed
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Dependencies
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Production (`dependencies`)**
+
+- `@reduxjs/toolkit`
+- `@tailwindcss/vite`
+- `antd`
+- `axios`
+- `lucide-react`
+- `react`
+- `react-dom`
+- `react-player`
+- `react-redux`
+- `react-router`
+- `tailwind-merge`
+- `tailwindcss`
+
+**Development (`devDependencies`)**
+
+- `vite`
+- `@vitejs/plugin-react`
+- `typescript`
+- `typescript-eslint`
+- `eslint`
+- `@eslint/js`
+- `eslint-plugin-react-hooks`
+- `eslint-plugin-react-refresh`
+- `globals`
+- `@types/node`
+- `@types/react`
+- `@types/react-dom`
+
+---
+
+## Prerequisites
+
+Before running the project, make sure you have:
+
+- **Node.js** (LTS version recommended, e.g. 20.x)
+- **npm** (or another compatible package manager such as `pnpm` or `yarn`)
+- Internet access to install dependencies
+
+---
+
+## How to run the project
+
+### 1. Clone the repository
+
+```bash
+git clone <REPOSITORY_URL>
+cd looqbox-frontend-challenge
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Using **npm**:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+_(If you prefer `pnpm` or `yarn`, adjust the command accordingly.)_
+
+### 3. Start the development server
+
+```bash
+npm run dev
+```
+
+Vite will display the local address in the terminal, usually something like:
+
+```bash
+http://localhost:5173
+```
+
+Open this URL in your browser to see the application.
+
+### 4. Build for production
+
+```bash
+npm run build
+```
+
+The final bundle will be generated in the `dist/` folder.
+
+### 5. Preview the production build
+
+```bash
+npm run preview
+```
+
+This command runs a local server that serves the production build, which is useful to test before deploying.
+
+---
+
+## Available scripts
+
+- **`npm run dev`**: starts the Vite development server.
+- **`npm run build`**: builds the project for production.
+- **`npm run preview`**: runs a local server serving the built app.
+- **`npm run lint`**: runs ESLint across the project.
+
+---
+
+## Architecture (overview)
+
+The project follows a typical React + Vite structure:
+
+- **`src/`**: application source code
+  - **`components/`**: reusable UI components
+  - **`pages/`** (or similar): main pages/views
+  - **`store/`** (or `redux/`): Redux Toolkit store and slices
+  - **`routes/`**: route configuration with `react-router` (if applicable)
+  - **`styles/`**: global styles and Tailwind configuration (when not in root files)
+
+If you are reviewing the challenge, a good starting point is the main entry file (usually `main.tsx` or equivalent) and then follow the imports to understand the flow.
+
+---
+
+## Code style and quality
+
+- **TypeScript** for static typing and better maintainability.
+- **ESLint** to enforce a consistent style and catch common issues.
+- **React Hooks** with `eslint-plugin-react-hooks` for best practices.
+- **Global state management** with Redux Toolkit, focusing on lean reducers and well‑defined actions.
+
+To run static analysis:
+
+```bash
+npm run lint
+```
+
+---
+
+## User experience (UX)
+
+The application is designed to be:
+
+- **Responsive**: adapts to different screen sizes.
+- **Clear**: text, icons (`lucide-react`) and visual components (`antd`) help guide the user.
+- **Consistent**: Tailwind and Ant Design help keep a unified design across screens.
+
+Feel free to tweak colors, spacing and typography in the style/Tailwind configuration files to match the desired visual identity.
+
+---
+
+## How to extend or adapt
+
+- **Fork** the repository or create a new branch.
+- Make your changes following the existing code style.
+- Run `npm run lint` and `npm run build` to ensure everything is still working.
+- Open a Pull Request describing the changes you made.
+
+---
+
+## License
+
+This project is intended for the **Looqbox technical challenge**. Check with the repository maintainer before reusing the code in other contexts.

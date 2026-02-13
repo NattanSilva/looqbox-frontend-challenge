@@ -27,7 +27,7 @@ export function usePokemon() {
       const response = await api.get<Pokemon>(`/${id}`)
       return response.data
     } catch (error) {
-      console.error('Error fetching Pokémon details:', error)
+      return
     }
   }
 
@@ -42,7 +42,7 @@ export function usePokemon() {
         ' ',
       )
     } catch (error) {
-      console.error('Error fetching Pokémon description:', error)
+      return
     }
   }
 
@@ -70,7 +70,6 @@ export function usePokemon() {
 
       return weaknesses
     } catch (error) {
-      console.error('Error fetching Pokémon types:', error)
       return []
     }
   }
