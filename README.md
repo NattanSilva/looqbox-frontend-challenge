@@ -75,7 +75,7 @@ Before running the project, make sure you have:
 ### 1. Clone the repository
 
 ```bash
-git clone <REPOSITORY_URL>
+git clone https://github.com/NattanSilva/looqbox-frontend-challenge.git
 cd looqbox-frontend-challenge
 ```
 

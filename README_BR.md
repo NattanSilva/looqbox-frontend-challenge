@@ -1,4 +1,4 @@
-## Desafio Looqbod Frontend
+## Desafio Looqbox Frontend
 
 Aplicação frontend desenvolvida como parte do **desafio técnico da Looqbox**, utilizando uma stack moderna com **React**, **TypeScript**, **Vite**, **Redux Toolkit** e **Tailwind CSS**, além de componentes visuais com **Ant Design**.
 
